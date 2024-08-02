@@ -17,11 +17,3 @@ for chunk in pd.read_csv('Race.IAT.public.2020.csv', chunksize=1000):
     df=df.loc[(df["countryres_num"]=="1") & (df["STATE"] != " ") & (df["D_biep.White_Good_all"] != " ")]
     print(df.head(10)) 
     
-    
-    
-    # Process each chunk
-    # if count < 2:
-    #     print(chunk.head()) 
-    #     count += 1
-    # else:
-    #     break
