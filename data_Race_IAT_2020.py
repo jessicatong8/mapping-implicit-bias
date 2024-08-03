@@ -1,6 +1,9 @@
 import pandas as pd
 
-# count = 0
+import time
+start_time = time.time()
+
+
 #D_biep.White_Good_all: Overall IAT D Score
 # countryres_num	Country of Residence
     # 1: USA
@@ -22,40 +25,39 @@ dtype_dict = {
     'weekday': 'str'
 }
 
-
 def cleanChunk(chunk):
-    # df_selected_range = chunk.iloc[:, 4:9]
-    # print(df_selected_range.head(5))
     #filter for country of residence, state, and overall IAT D score
     filtered = chunk.loc[:,["countryres_num", "STATE","D_biep.White_Good_all"]]
     filtered.columns = ['Country', 'State', 'Score']
     # filter for people in the US, and nonempty state and scores
     filtered=filtered.loc[(filtered["Country"]=="1") & (filtered["State"] != " ") & (filtered["Score"] != " ")]
     filtered["Score"] = pd.to_numeric(filtered['Score'], errors='coerce')
-    # print(filtered.head(10))
+    # count number of people
     numPeople = filtered.shape[0]
     # groupby states
     groupStates = filtered.groupby('State')['Score'].sum()
     
-    return (groupStates, numPeople) 
+    return groupStates, numPeople
 
-oldChunk = None
-oldPeople = 0
-for chunk in pd.read_csv(file, chunksize=10000,dtype=dtype_dict):
-    newChunk, newPeople = cleanChunk(chunk)
-    oldPeople += newPeople
-    # numPeople += cleanChunk(chunk)
-    # concatenate old chunk and new chunk
-    mergedChunk = pd.concat([oldChunk, newChunk], axis=1, ignore_index=True)
-    # set old chunk for next iteration to the sum of old chunk and new chunk
-    oldChunk = mergedChunk.sum(axis=1)
-    
+def sumChunks(file):
+    oldChunk = None
+    oldPeople = 0
+    for chunk in pd.read_csv(file, chunksize=10000,dtype=dtype_dict):
+        newChunk, newPeople = cleanChunk(chunk)
+        # sum number of people
+        oldPeople += newPeople
+        # concatenate old chunk and new chunk
+        mergedChunk = pd.concat([oldChunk, newChunk], axis=1, ignore_index=True)
+        # set old chunk for next iteration to the sum of old chunk and new chunk
+        oldChunk = mergedChunk.sum(axis=1)
+    return oldChunk , oldPeople
 
 
-# print(oldChunk)
-# print(oldPeople)   
-averageScore = oldChunk / oldPeople
+sumScores, numPeople = sumChunks(file)
+averageScore = sumScores / numPeople
 print(averageScore)
+print("Process finished --- %s seconds ---" % (time.time() - start_time))
+
 
 
     
