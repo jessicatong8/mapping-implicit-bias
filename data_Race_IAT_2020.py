@@ -32,33 +32,38 @@ def cleanChunk(chunk):
     # filter for people in the US, and nonempty state and scores
     filtered=filtered.loc[(filtered["Country"]=="1") & (filtered["State"] != " ") & (filtered["Score"] != " ")]
     filtered["Score"] = pd.to_numeric(filtered['Score'], errors='coerce')
-    # count number of people
-    numPeople = filtered.shape[0]
-    # groupby states
-    groupStates = filtered.groupby('State')['Score'].sum()
-    
-    return groupStates, numPeople
+    return filtered
+   
+def groupBy(df):
+    countStates = df.groupby('State').size()
+    sumStates = df.groupby('State')['Score'].sum()
+    groupedStates = pd.concat([sumStates, countStates], axis=1, ignore_index=True)
+    groupedStates.columns = ['Sum', 'Count']
+    return groupedStates
 
 def sumChunks(file):
-    oldChunk = None
-    oldPeople = 0
+    first = True
     for chunk in pd.read_csv(file, chunksize=10000,dtype=dtype_dict):
-        newChunk, newPeople = cleanChunk(chunk)
-        # sum number of people
-        oldPeople += newPeople
-        # concatenate old chunk and new chunk
-        mergedChunk = pd.concat([oldChunk, newChunk], axis=1, ignore_index=True)
-        # set old chunk for next iteration to the sum of old chunk and new chunk
-        oldChunk = mergedChunk.sum(axis=1)
-    return oldChunk , oldPeople
+        if first:
+            oldChunk = groupBy(cleanChunk(chunk))
+            first = False
+        else:
+            newChunk = groupBy(cleanChunk(chunk))
+            oldChunk = oldChunk.add(newChunk, fill_value=0)
+        # print(oldChunk)
+    return oldChunk
+
+def main():
+    df = sumChunks(file)
+    df['Average'] = df['Sum'] / df['Count']
+    print(df)
+    # averageScore = sumScores / numPeople
+    # print(averageScore)
+    print("Process finished --- %s seconds ---" % (time.time() - start_time))
 
 
-sumScores, numPeople = sumChunks(file)
-averageScore = sumScores / numPeople
-print(averageScore)
-print("Process finished --- %s seconds ---" % (time.time() - start_time))
 
+if __name__ == "__main__":
+    main()
 
-
-    
 
