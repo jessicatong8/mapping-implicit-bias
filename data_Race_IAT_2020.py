@@ -50,18 +50,13 @@ def sumChunks(file):
         else:
             newChunk = groupBy(cleanChunk(chunk))
             oldChunk = oldChunk.add(newChunk, fill_value=0)
-        # print(oldChunk)
     return oldChunk
 
 def main():
     df = sumChunks(file)
     df['Average'] = df['Sum'] / df['Count']
-    print(df)
-    # averageScore = sumScores / numPeople
-    # print(averageScore)
+    print(df.to_string())
     print("Process finished --- %s seconds ---" % (time.time() - start_time))
-
-
 
 if __name__ == "__main__":
     main()
