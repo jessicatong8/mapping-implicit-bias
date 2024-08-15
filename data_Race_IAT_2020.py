@@ -55,6 +55,7 @@ def sumChunks(file):
 def main():
     df = sumChunks(file)
     df['Average'] = df['Sum'] / df['Count']
+    df.to_csv('2020_RaceAverageScore.csv')
     print(df.to_string())
     print("Process finished --- %s seconds ---" % (time.time() - start_time))
 
