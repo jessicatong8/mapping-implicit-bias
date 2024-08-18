@@ -34,24 +34,6 @@ def cleanChunk(chunk,group):
                         (filtered["Score"].notna())]
     filtered["Score"] = pd.to_numeric(filtered['Score'], errors='coerce')
     return filtered
-   
-def groupBy(df):
-    countStates = df.groupby('State').size()
-    sumStates = df.groupby('State')['Score'].sum()
-    groupedStates = pd.concat([sumStates, countStates], axis=1, ignore_index=True)
-    groupedStates.columns = ['Sum', 'Count']
-    return groupedStates
-
-def sumChunks(file):
-    first = True
-    for chunk in pd.read_csv(file, chunksize=10000,dtype=dtype_dict):
-        if first:
-            oldChunk = groupBy(cleanChunk(chunk))
-            first = False
-        else:
-            newChunk = groupBy(cleanChunk(chunk))
-            oldChunk = oldChunk.add(newChunk, fill_value=0)
-    return oldChunk
 
 def processChunks(file,group):
     result = []
