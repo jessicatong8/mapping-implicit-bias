@@ -62,12 +62,12 @@ def processChunks(file,group):
     # group by state, select score column, sums scores and counts number of people
     grouped = combined_df.groupby(group)['Score'].agg(['sum', 'count']).reset_index()
     # calculate new column with  average score
-    grouped['average'] = grouped['sum'] / grouped['count']
+    grouped['average'] = (grouped['sum'] / grouped['count'])
     return grouped
 
 def main():
-    df = processChunks(file,'STATE')
-    df.to_csv('2020_RaceAverageScore.csv', index=False)
+    df = processChunks(file,'CountyNo')
+    df.to_csv('2020_RaceAverageScore_County.csv', index=False)
     print(df.to_string())
     print("Process finished --- %s seconds ---" % (time.time() - start_time))
 
