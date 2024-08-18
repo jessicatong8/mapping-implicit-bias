@@ -30,7 +30,9 @@ def cleanChunk(chunk):
     filtered = chunk.loc[:,["countryres_num", "STATE","D_biep.White_Good_all"]]
     filtered.columns = ['Country', 'State', 'Score']
     # filter for people in the US, and nonempty state and scores
-    filtered=filtered.loc[(filtered["Country"]=="1") & (filtered["State"] != " ") & (filtered["Score"] != " ")]
+    filtered = filtered[(filtered["Country"] == "1") & 
+                        (filtered["State"].notna()) & 
+                        (filtered["Score"].notna())]
     filtered["Score"] = pd.to_numeric(filtered['Score'], errors='coerce')
     return filtered
    
@@ -52,10 +54,21 @@ def sumChunks(file):
             oldChunk = oldChunk.add(newChunk, fill_value=0)
     return oldChunk
 
+def processChunks(file):
+    result = []
+    for chunk in pd.read_csv(file, chunksize=10000, dtype=dtype_dict):
+        cleaned_chunk = cleanChunk(chunk)
+        result.append(cleaned_chunk)
+    combined_df = pd.concat(result)
+    # group by state, select score column, sums scores and counts number of people
+    grouped_states = combined_df.groupby('State')['Score'].agg(['sum', 'count']).reset_index()
+    # calculate new column with  average score
+    grouped_states['average'] = grouped_states['sum'] / grouped_states['count']
+    return grouped_states
+
 def main():
-    df = sumChunks(file)
-    df['Average'] = df['Sum'] / df['Count']
-    df.to_csv('2020_RaceAverageScore.csv')
+    df = processChunks(file)
+    df.to_csv('2020_RaceAverageScore.csv', index=False)
     print(df.to_string())
     print("Process finished --- %s seconds ---" % (time.time() - start_time))
 
