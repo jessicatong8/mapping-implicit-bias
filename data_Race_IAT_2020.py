@@ -3,7 +3,6 @@ import pandas as pd
 import time
 start_time = time.time()
 
-
 #D_biep.White_Good_all: Overall IAT D Score
 # countryres_num	Country of Residence
     # 1: USA
@@ -25,13 +24,13 @@ dtype_dict = {
     'weekday': 'str'
 }
 
-def cleanChunk(chunk):
+def cleanChunk(chunk,group):
     #filter for country of residence, state, and overall IAT D score
-    filtered = chunk.loc[:,["countryres_num", "STATE","D_biep.White_Good_all"]]
-    filtered.columns = ['Country', 'State', 'Score']
+    filtered = chunk.loc[:,["countryres_num", group,"D_biep.White_Good_all"]]
+    filtered.columns = ['Country', group, 'Score']
     # filter for people in the US, and nonempty state and scores
     filtered = filtered[(filtered["Country"] == "1") & 
-                        (filtered["State"].notna()) & 
+                        (filtered[group].notna()) & 
                         (filtered["Score"].notna())]
     filtered["Score"] = pd.to_numeric(filtered['Score'], errors='coerce')
     return filtered
@@ -54,20 +53,20 @@ def sumChunks(file):
             oldChunk = oldChunk.add(newChunk, fill_value=0)
     return oldChunk
 
-def processChunks(file):
+def processChunks(file,group):
     result = []
-    for chunk in pd.read_csv(file, chunksize=10000, dtype=dtype_dict):
-        cleaned_chunk = cleanChunk(chunk)
+    for chunk in pd.read_csv(file, chunksize=100000, dtype=dtype_dict):
+        cleaned_chunk = cleanChunk(chunk,group)
         result.append(cleaned_chunk)
     combined_df = pd.concat(result)
     # group by state, select score column, sums scores and counts number of people
-    grouped_states = combined_df.groupby('State')['Score'].agg(['sum', 'count']).reset_index()
+    grouped = combined_df.groupby(group)['Score'].agg(['sum', 'count']).reset_index()
     # calculate new column with  average score
-    grouped_states['average'] = grouped_states['sum'] / grouped_states['count']
-    return grouped_states
+    grouped['average'] = grouped['sum'] / grouped['count']
+    return grouped
 
 def main():
-    df = processChunks(file)
+    df = processChunks(file,'STATE')
     df.to_csv('2020_RaceAverageScore.csv', index=False)
     print(df.to_string())
     print("Process finished --- %s seconds ---" % (time.time() - start_time))
