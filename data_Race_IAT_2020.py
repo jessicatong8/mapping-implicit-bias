@@ -24,32 +24,48 @@ dtype_dict = {
     'weekday': 'str'
 }
 
-def cleanChunk(chunk,group):
+state_fips_dtype = {
+    'stateName': 'str',
+    'stateNo': 'str',
+    'stateAbb': 'str',
+}
+
+state_fips = pd.read_csv('us-state-fips.csv',dtype=state_fips_dtype)
+#print(state_fips.columns)
+#print(state_fips.head(5))  # print first 5 rows for testing
+
+def cleanChunk(chunk):
     #filter for country of residence, state, and overall IAT D score
-    filtered = chunk.loc[:,["countryres_num", group,"D_biep.White_Good_all"]]
-    filtered.columns = ['Country', group, 'Score']
+    df = chunk.loc[:,["countryres_num", "STATE", "CountyNo","D_biep.White_Good_all"]]
+    df.columns = ['country', 'stateAbb', 'countyNo', 'score']
     # filter for people in the US, and nonempty state and scores
-    filtered = filtered[(filtered["Country"] == "1") & 
-                        (filtered[group].notna()) & 
-                        (filtered["Score"].notna())]
-    filtered["Score"] = pd.to_numeric(filtered['Score'], errors='coerce')
-    return filtered
+    df = df[(df["country"] == "1") &
+                        (df["stateAbb"] != " ") &
+                        (df["countyNo"] != " ") & 
+                        (df["score"] != " ")]
+    df["score"] = pd.to_numeric(df['score'], errors='coerce')
+    # add column with state number
+    df['stateNo'] = df['stateAbb'].map(state_fips.set_index('stateAbb')['stateNo'])
+    # add column with fips (stateNo + countyNo)
+    df['fips'] = df['stateNo'] + df['countyNo']
+    return df
 
 def processChunks(file,group):
     result = []
     for chunk in pd.read_csv(file, chunksize=100000, dtype=dtype_dict):
-        cleaned_chunk = cleanChunk(chunk,group)
+        cleaned_chunk = cleanChunk(chunk)
+        #print(cleaned_chunk.head(5))  # print first 5 rows for testing)
         result.append(cleaned_chunk)
     combined_df = pd.concat(result)
     # group by state, select score column, sums scores and counts number of people
-    grouped = combined_df.groupby(group)['Score'].agg(['sum', 'count']).reset_index()
+    grouped = combined_df.groupby(group)['score'].agg(['sum', 'count']).reset_index()
     # calculate new column with  average score
-    grouped['average'] = (grouped['sum'] / grouped['count'])
+    grouped['avgScore'] = (grouped['sum'] / grouped['count'])
     return grouped
 
 def main():
-    df = processChunks(file,'CountyNo')
-    df.to_csv('2020_RaceAverageScore_County.csv', index=False)
+    df = processChunks(file,'fips')
+    df.to_csv('2020_RaceAverageScore_fips.csv', index=False)
     print(df.to_string())
     print("Process finished --- %s seconds ---" % (time.time() - start_time))
 
