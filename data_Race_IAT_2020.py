@@ -40,9 +40,9 @@ def cleanChunk(chunk):
     df.columns = ['country', 'stateAbb', 'countyNo', 'score']
     # filter for people in the US, and nonempty state and scores
     df = df[(df["country"] == "1") &
-                        (df["stateAbb"] != " ") &
-                        (df["countyNo"] != " ") & 
-                        (df["score"] != " ")]
+            (df["stateAbb"] != " ") &
+            (df["countyNo"] != " ") & 
+            (df["score"] != " ")]
     df["score"] = pd.to_numeric(df['score'], errors='coerce')
     # add column with state number
     df['stateNo'] = df['stateAbb'].map(state_fips.set_index('stateAbb')['stateNo'])
