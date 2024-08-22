@@ -4,9 +4,9 @@ from jinja2 import Template
 import json
  
 #import data
-data = pd.read_csv('2020_RaceAverageScore_Cleaned.csv')
+data = pd.read_csv('data/2020_RaceAverageScore_Cleaned.csv')
 
-with open('us-states.json') as response:
+with open('geojson/us-states.json') as response:
      states = json.load(response)
 
 

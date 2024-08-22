@@ -1,5 +1,4 @@
 import pandas as pd
-
 import time
 start_time = time.time()
 
@@ -36,12 +35,14 @@ state_fips = pd.read_csv('us-state-fips.csv',dtype=state_fips_dtype)
 
 def cleanChunk(chunk):
     #filter for country of residence, state, and overall IAT D score
-    df = chunk.loc[:,["countryres_num", "STATE", "CountyNo","D_biep.White_Good_all"]]
-    df.columns = ['country', 'stateAbb', 'countyNo', 'score']
+    df = chunk.loc[:,["countryres_num", "STATE", "CountyNo", "MSANo", "MSAName", "D_biep.White_Good_all"]]
+    df.columns = ['country', 'stateAbb', 'countyNo', 'metroNo', 'metroName', 'score']
     # filter for people in the US, and nonempty state and scores
     df = df[(df["country"] == "1") &
             (df["stateAbb"] != " ") &
-            (df["countyNo"] != " ") & 
+            (df["countyNo"] != " ") &
+            (df["metroNo"] != " ") & 
+            (df["metroName"] != " ") & 
             (df["score"] != " ")]
     df["score"] = pd.to_numeric(df['score'], errors='coerce')
     # add column with state number
@@ -64,8 +65,8 @@ def processChunks(file,group):
     return grouped
 
 def main():
-    df = processChunks(file,'fips')
-    df.to_csv('2020_RaceAverageScore_fips.csv', index=False)
+    df = processChunks(file,'metroNo')
+    df.to_csv('2020_RaceAverageScore_metro.csv', index=False)
     print(df.to_string())
     print("Process finished --- %s seconds ---" % (time.time() - start_time))
 

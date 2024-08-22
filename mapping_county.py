@@ -4,18 +4,17 @@ from jinja2 import Template
 import json
  
 #import data
-data = pd.read_csv('2020_RaceAverageScore_fips.csv', dtype={"fips": str})
+data = pd.read_csv('data/2020_RaceAverageScore_fips.csv', dtype={"fips": str})
 
 
-with open('geojson-counties-fips.json') as response:
+with open('geojson/us-counties.json') as response:
      counties = json.load(response)
-
+#print(counties["features"][2]["properties"])
 
 fig = px.choropleth(data, geojson=counties, locations='fips', color='avgScore',
                     range_color=(0.2,0.3),
                     color_continuous_scale="Darkmint",
                     scope="usa",
-                    labels={'unemp':'unemployment rate'}
                     )
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
