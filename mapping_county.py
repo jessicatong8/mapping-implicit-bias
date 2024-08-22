@@ -13,9 +13,24 @@ with open('geojson-counties-fips.json') as response:
 
 fig = px.choropleth(data, geojson=counties, locations='fips', color='avgScore',
                     range_color=(0.2,0.3),
-                    color_continuous_scale="Blues",
+                    color_continuous_scale="Darkmint",
                     scope="usa",
                     labels={'unemp':'unemployment rate'}
                     )
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+
+fig.update_traces(marker_line_color='gray',  # Border color
+                  marker_line_width=0.5)        # Border width
+
 fig.show()
+
+
+outputFile = r"index-county.html"
+templateFile = r"template.html"
+
+plotly_jinja_data = {"fig":fig.to_html(full_html=False)}
+
+with open(outputFile, "w", encoding="utf-8") as output_file:
+    with open(templateFile) as template_file:
+        template = Template(template_file.read())
+        output_file.write(template.render(plotly_jinja_data))
