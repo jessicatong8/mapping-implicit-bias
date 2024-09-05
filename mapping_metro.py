@@ -7,19 +7,35 @@ import json
 data = pd.read_csv('data/2020_RaceAverageScore_metro.csv', dtype={"metroNo": str})
 
 
-with open('geojson/us-metro-area.json') as response:
-     metroAreas = json.load(response)
-#print(metroAreas["features"][2]["properties"])
+with open('geojson/us-metro-area-3.geojson') as response:
+     geojson = json.load(response)
+#print(geojson["features"][2]["properties"])
 
 # print(data['metroNo'])  # Inspect the metroNo values
-# print([feature['properties']['GEOID'] for feature in metroAreas['features']])  # Check the ids in GeoJSON
-# ids = [feature['properties']['GEOID'] for feature in metroAreas['features']]
+# print([feature['properties']['GEOID'] for feature in geojson['features']])  # Check the ids in GeoJSON
+# ids = [feature['properties']['GEOID'] for feature in geojson['features']]
 
-fig = px.choropleth(data, geojson=metroAreas, locations='metroNo', color='avgScore',
+
+
+# # Inspect the metroNo values
+# print(data['metroNo'])
+
+# # Inspect the GEOID values
+# print([feature['properties']['GEOID'] for feature in geojson['features']])
+
+# # Modify the metroNo values to match the GEOID values
+# # Assuming the GEOID values are in the format 'XXXXX' and the metroNo values are in the format 'XXXXX'
+# data['metroNo'] = data['metroNo'].str.zfill(5)
+
+# # Verify the modification
+# print(data['metroNo'])
+
+
+
+fig = px.choropleth(data, geojson=geojson, locations='metroNo', color='avgScore',
                     range_color=(0.2,0.3),
                     color_continuous_scale="Darkmint",
                     scope="usa",
-                    labels={'unemp':'unemployment rate'}
                     )
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
