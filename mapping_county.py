@@ -5,6 +5,7 @@ import json
  
 #import data
 data = pd.read_csv('data/2020_RaceAverageScore_fips.csv', dtype={"fips": str})
+data = data.loc[data['count'] >= 20] 
 
 
 with open('geojson/us-counties.json') as response:
@@ -12,7 +13,7 @@ with open('geojson/us-counties.json') as response:
 #print(counties["features"][2]["properties"])
 
 fig = px.choropleth(data, geojson=counties, locations='fips', color='avgScore',
-                    range_color=(0.2,0.3),
+                    #range_color=(0.2,0.3),
                     color_continuous_scale="Darkmint",
                     scope="usa",
                     )

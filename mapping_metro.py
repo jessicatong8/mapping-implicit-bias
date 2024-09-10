@@ -7,8 +7,8 @@ import json
 data = pd.read_csv('data/2020_RaceAverageScore_metro.csv', dtype={"metroNo": str})
 
 
-with open('geojson/us-metro-area-3.geojson') as response:
-     geojson = json.load(response)
+with open('geojson/metro-area-github-2021.json') as response:
+     metros = json.load(response)
 #print(geojson["features"][2]["properties"])
 
 # print(data['metroNo'])  # Inspect the metroNo values
@@ -32,7 +32,7 @@ with open('geojson/us-metro-area-3.geojson') as response:
 
 
 
-fig = px.choropleth(data, geojson=geojson, locations='metroNo', color='avgScore',
+fig = px.choropleth(data, geojson=metros, locations='metroNo', color='avgScore',
                     range_color=(0.2,0.3),
                     color_continuous_scale="Darkmint",
                     scope="usa",

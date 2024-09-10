@@ -29,7 +29,7 @@ state_fips_dtype = {
     'stateAbb': 'str',
 }
 
-state_fips = pd.read_csv('us-state-fips.csv',dtype=state_fips_dtype)
+state_fips = pd.read_csv('IAT.github.io/data/us-state-fips.csv',dtype=state_fips_dtype)
 #print(state_fips.columns)
 #print(state_fips.head(5))  # print first 5 rows for testing
 
