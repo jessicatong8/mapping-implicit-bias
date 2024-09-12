@@ -4,7 +4,7 @@ from jinja2 import Template
 import json
  
 #import data
-data = pd.read_csv('data/2020_RaceAverageScore_fips.csv', dtype={"fips": str})
+data = pd.read_csv('data/2020_RaceAverageScore_county.csv', dtype={"fips": str})
 data = data.loc[data['count'] >= 20] 
 
 
