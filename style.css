@@ -1,7 +1,12 @@
-/* body {
-    display: flex;
-} */
-/* 
+body {
+    /* display: flex; */
+}
+
 div {
-    min-height: 2000px;
-} */
+    /* border: 1px solid black; */
+    /* flex: 1; */
+}
+
+.hidden {
+    display: none;
+}
