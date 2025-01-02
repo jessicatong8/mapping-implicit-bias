@@ -1,0 +1,52 @@
+/* body {
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+} */
+
+
+iframe {
+    border: none;
+    width: 100%;
+    /* aspect-ratio: 16/5; */
+    height: 62vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.button {
+    background-color: #056979;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #004155; /* Green */
+}
+
+.lato-regular {
+    font-family: "Lato", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+  
+h1 {
+    font-family: "Lato", serif;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 40px;
+}
