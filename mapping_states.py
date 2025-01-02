@@ -24,7 +24,7 @@ fig.update_geos(showlakes=False)
 fig.show()
 
 
-outputFile = r"index.html"
+outputFile = r"map_states.html"
 templateFile = r"template.html"
 
 plotly_jinja_data = {"fig":fig.to_html(full_html=False)}
