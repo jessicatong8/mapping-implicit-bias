@@ -46,6 +46,21 @@ main {
     padding-right: 1em;
 }
 
+@media only screen and (min-width: 1000px) {
+    main {
+        padding-left: 15em;
+        padding-right: 15em;
+    }
+    header {
+        padding-left: 15em;
+        padding-right: 15em;
+    }
+    nav {
+        margin-left: -15em;
+        margin-right: -15em;
+    }
+}
+
 iframe {
     border: none;
     width: 100%;
