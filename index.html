@@ -11,18 +11,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body class="lato-regular">
-    <h1 class="lato-bold">Mapping Implicit Bias</h1>
-    <p> Subheading </p>
+    <header>
+        <nav>
+            <a href = '#'>About</a>
+            <a href = '#'>Learn More</a>
+        </nav>
+        <h1 class="lato-bold">Mapping Implicit Bias</h1>
+        <p> Subheading </p>
+    </header>
 
-    <div class = "button-flexbox">
-        <button class="button disabled" id="stateButton">State Map</button>
-        <button class="button" id="countyButton">County Map</button>
-    </div>
+    <main>
+        <div class = "button-flexbox">
+            <button class="button disabled" id="stateButton">State Map</button>
+            <button class="button" id="countyButton">County Map</button>
+        </div>
 
-    <iframe id="stateMap" class="" src= map_states.html title="Map of US States"></iframe>
-    <iframe id="countyMap" class="hidden"src= map_counties.html title="Map of US Counties"></iframe>
+        <iframe id="stateMap" class="" src= map_states.html title="Map of US States"></iframe>
+        <iframe id="countyMap" class="hidden"src= map_counties.html title="Map of US Counties"></iframe>
 
-    <p> caption blah blah</p>
-    
+        <p> caption blah blah</p>
+    </main>
+
 </body>
 </html>

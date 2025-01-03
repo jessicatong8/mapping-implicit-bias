@@ -3,14 +3,52 @@ body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
-    padding: 0em 2em 0.5em;
+    margin: 0;
+    /* padding: 0em 2em 0.5em; */
 }
 
+nav {
+    background-color: white;
+    padding: 15px;
+    margin: -15px;
+    text-align: right;
+}
+
+nav > a {
+    text-decoration: none;
+    color: black;
+    padding: 1em;
+    
+}
+
+nav > a:hover {
+    background-color: #004155;
+    color: white;
+}
+
+header {
+    background-color: #1c8595;
+    color: white;
+    padding: 15px;
+    margin-bottom: 1.5em;
+}
+  
+h1 {
+    font-family: "Lato", serif;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 2.5em;
+    margin-top: 1em;
+}
+
+main {
+    padding-left: 1em;
+    padding-right: 1em;
+}
 
 iframe {
     border: none;
     width: 100%;
-    /* aspect-ratio: 16/5; */
     height: 62vh;
 }
 
@@ -21,7 +59,6 @@ iframe {
 .button-flexbox {
     display: flex;
     justify-content: center;
-    
 }
 
 .button {
@@ -50,11 +87,4 @@ iframe {
 .disabled {
     opacity: 0.6;
     cursor: not-allowed;
-}
-  
-h1 {
-    font-family: "Lato", serif;
-    font-weight: 700;
-    font-style: bold;
-    font-size: 40px;
 }
