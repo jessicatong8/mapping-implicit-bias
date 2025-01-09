@@ -10,7 +10,7 @@ start_time = time.time()
 # MSANo	Metropolitan Statistical Area No. for US residents
 # MSAName	Metropolitan Statistical Area Name for US residents
 
-file = 'Race.IAT.public.2020.csv'
+file = '/Users/jessicatong/Documents/IAT/Race.IAT.public.2020.csv'
 
 # Read CSV file with specified dtypes
 # Columns (4,5,6,7,8) have mixed types. Specify dtype option on import or set low_memory=False.
@@ -29,7 +29,7 @@ state_fips_dtype = {
     'stateAbb': 'str',
 }
 
-state_fips = pd.read_csv('IAT.github.io/data/us-state-fips.csv',dtype=state_fips_dtype)
+state_fips = pd.read_csv('mapping-implicit-bias/data/us-state-fips.csv',dtype=state_fips_dtype)
 #print(state_fips.columns)
 #print(state_fips.head(5))  # print first 5 rows for testing
 
@@ -64,11 +64,34 @@ def processChunks(file,group):
     grouped['avgScore'] = (grouped['sum'] / grouped['count'])
     return grouped
 
+def jsonify(in_file, out_file):
+    """
+    param: in_file (str) file path to csv
+    param: out_file (str) file path to output json
+    return: json representation in the format  {'id': 'US.WA', 'value': 0.1234}
+    """
+
+    df = pd.read_csv(in_file)
+    # Drop columns
+    df.drop(['Sum', 'Count'], axis=1, inplace=True)
+    # Rename columns
+    df.columns = ['id', 'value']
+    # Add prefix 'US.' to stateAbb
+    df['id'] = 'US.' + df['id']
+    # Round value to 4 decimal places
+    df['value'] = df['value'].round(4)
+    print(df)
+    # Write to json file, one record per line for lines=True option in to_json() function.
+    df.to_json(out_file, orient='records', lines=True)
+
+
 def main():
-    df = processChunks(file,'metroNo')
-    df.to_csv('2020_RaceAverageScore_metro.csv', index=False)
-    print(df.to_string())
-    print("Process finished --- %s seconds ---" % (time.time() - start_time))
+    # df = processChunks(file,'stateAbb')
+    # df.to_csv('test.csv', index=False)
+    # print(df.to_string())
+    # print("Process finished --- %s seconds ---" % (time.time() - start_time))
+
+    jsonify("mapping-implicit-bias/data/2020_RaceAverageScore_States.csv", "mapping-implicit-bias/data/states_2020.json")
 
 if __name__ == "__main__":
     main()
