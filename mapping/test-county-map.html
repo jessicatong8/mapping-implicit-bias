@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.anychart.com/releases/8.13.0/js/anychart-core.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.13.0/js/anychart-map.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.13.0/js/anychart-data-adapter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    <style>
+      html, body, #container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+</head>
+
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        anychart.onDocumentReady(function() {
+
+
+
+            // load data from a json file
+            anychart.data.loadJsonFile('https://raw.githubusercontent.com/jessicatong8/mapping-implicit-bias/better-map/data/states_2020.json',
+            function (data) {
+                // console.log(data[0]);
+
+                // create a dataset
+                var dataSet = anychart.data.set(data);
+
+                // create a map instance
+                var map = anychart.map();
+
+                fetch("https://raw.githubusercontent.com/jessicatong8/mapping-implicit-bias/better-map/geojson/us-counties.json")
+                    .then(response => { 
+                        return response.json();
+                    })
+                    .then(geoData => {
+                        map.geoData(geoData);
+                        map.crs("mercator");
+                    });
+
+                    var series = map.choropleth(dataSet);
+                
+                    // making ordinal colorRange
+                    var ordinalScale = anychart.scales.ordinalColor([
+                        {less: 0.20},
+                        {from: 0.20, to: 0.22},
+                        {from: 0.22, to: 0.24},
+                        {from: 0.24, to: 0.26},
+                        {from: 0.26, to: 0.28},
+                        {greater:0.28}
+                    ]);  
+
+                    // set scale colors
+                    ordinalScale.colors(['#D2EDF5','#A8CFDA', '#7EB1BF', '#5493A5', '#2A758A', '#00576F']);
+                    
+                    // tell the series what to use as a colorRange (colorScale)
+                    series.colorScale(ordinalScale);
+                    
+                    // create the map legend
+                    map.colorRange().enabled(true);
+                    // set the map title
+                    // map.title("State Visits Made by Queen Elizabeth II");
+                    // set the container
+                    map.container("container");
+                    // initiate the map drawing
+                    map.draw();
+
+
+            });
+
+        });
+
+    </script>
+    
+</body>
+
+
+</html>
