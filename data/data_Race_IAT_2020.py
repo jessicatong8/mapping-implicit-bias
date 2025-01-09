@@ -79,7 +79,7 @@ def jsonify(in_file, out_file):
     # Add prefix 'US.' to stateAbb
     df['id'] = 'US.' + df['id']
     # Round value to 4 decimal places
-    df['value'] = df['value'].round(4) * 10
+    df['value'] = df['value'].round(4)
     print(df)
     # Write to json file
     df.to_json(out_file, orient='records')
