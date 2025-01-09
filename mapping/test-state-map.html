@@ -31,7 +31,7 @@
             // load data from a json file
             anychart.data.loadJsonFile('https://raw.githubusercontent.com/jessicatong8/mapping-implicit-bias/better-map/data/states_2020.json',
             function (data) {
-                // console.log(data);
+                // console.log(data[0]);
 
                 // create a dataset
                 let dataSet = anychart.data.set(data);
@@ -43,21 +43,22 @@
 
                 let series = map.choropleth(dataSet);
                 
-                // set the map colors
-                series.colorScale(anychart.scales.linearColor('#EC6E07', '#64B5F6'));
+                // making ordinal colorRange
+                var ordinalScale = anychart.scales.ordinalColor([
+                    {less: 0.20},
+                    {from: 0.20, to: 0.22},
+                    {from: 0.22, to: 0.24},
+                    {from: 0.24, to: 0.26},
+                    {from: 0.26, to: 0.28},
+                    {greater:0.28}
+                ]);  
+
+                // set scale colors
+                ordinalScale.colors(['#D2EDF5','#A8CFDA', '#7EB1BF', '#5493A5', '#2A758A', '#00576F']);
                 
-                // // making of the ordinal colorRange
-                // ordinalScale = anychart.scales.ordinalColor([
-                //     {less: 0.20},
-                //     {from: 0.20, to: 0.22},
-                //     {from: 0.22, to: 0.24},
-                //     {from: 0.24, to: 0.26},
-                //     {from: 0.26, to: 0.28},
-                //     {greater:0.28}
-                // ]);   
-
-                // ordinalScale.colors(['rgb(253,225,86)','rgb(248,196,57)', 'rgb(244,168,19)', 'rgb(198,109,1)', 'rgb(152,58,0)', 'rgb(0,0,0)']);
-
+                // tell the series what to use as a colorRange (colorScale)
+                series.colorScale(ordinalScale);
+                
                 // create the map legend
                 map.colorRange().enabled(true);
                 // set the map title
