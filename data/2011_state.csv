@@ -1,0 +1,59 @@
+stateAbb,count,avgScore,stateName,year
+AA,1,0.44,,2011
+AE,77,0.18,,2011
+AK,241,0.35,Alaska,2011
+AL,1776,0.26,Alabama,2011
+AP,29,0.3,,2011
+AR,1124,0.3,Arkansas,2011
+AZ,2716,0.35,Arizona,2011
+CA,18930,0.33,California,2011
+CO,4040,0.33,Colorado,2011
+CT,2595,0.36,Connecticut,2011
+DC,1167,0.3,District of Columbia,2011
+DE,645,0.38,Delaware,2011
+FL,7734,0.35,Florida,2011
+FM,1,-0.03,,2011
+GA,5168,0.23,Georgia,2011
+GU,4,0.46,,2011
+HI,451,0.33,Hawaii,2011
+IA,2180,0.37,Iowa,2011
+ID,876,0.34,Idaho,2011
+IL,10154,0.34,Illinois,2011
+IN,4236,0.35,Indiana,2011
+KS,1695,0.36,Kansas,2011
+KY,2250,0.35,Kentucky,2011
+LA,1401,0.25,Louisiana,2011
+MA,5606,0.35,Massachusetts,2011
+MD,4540,0.27,Maryland,2011
+ME,658,0.35,Maine,2011
+MI,6099,0.32,Michigan,2011
+MN,5564,0.35,Minnesota,2011
+MO,3687,0.33,Missouri,2011
+MS,836,0.14,Mississippi,2011
+MT,653,0.35,Montana,2011
+NC,6688,0.3,North Carolina,2011
+ND,404,0.38,North Dakota,2011
+NE,2092,0.39,Nebraska,2011
+NH,766,0.39,New Hampshire,2011
+NJ,4403,0.37,New Jersey,2011
+NM,666,0.29,New Mexico,2011
+NV,1023,0.33,Nevada,2011
+NY,9982,0.33,New York,2011
+OH,8675,0.34,Ohio,2011
+OK,1267,0.35,Oklahoma,2011
+OR,3164,0.32,Oregon,2011
+PA,8896,0.36,Pennsylvania,2011
+PR,7,0.25,,2011
+RI,684,0.37,Rhode Island,2011
+SC,2485,0.27,South Carolina,2011
+SD,437,0.38,South Dakota,2011
+TN,2449,0.3,Tennessee,2011
+TX,8762,0.3,Texas,2011
+UT,2209,0.32,Utah,2011
+VA,5516,0.33,Virginia,2011
+VI,5,0.17,,2011
+VT,694,0.38,Vermont,2011
+WA,5568,0.33,Washington,2011
+WI,6772,0.37,Wisconsin,2011
+WV,1004,0.4,West Virginia,2011
+WY,193,0.3,Wyoming,2011

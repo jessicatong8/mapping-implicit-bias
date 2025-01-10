@@ -1,0 +1,57 @@
+stateAbb,count,avgScore,stateName,year
+AE,33,0.39,,2013
+AK,180,0.32,Alaska,2013
+AL,1466,0.31,Alabama,2013
+AP,27,0.47,,2013
+AR,1085,0.3,Arkansas,2013
+AZ,1942,0.32,Arizona,2013
+CA,16440,0.32,California,2013
+CO,3798,0.31,Colorado,2013
+CT,2247,0.37,Connecticut,2013
+DC,1073,0.28,District of Columbia,2013
+DE,416,0.33,Delaware,2013
+FL,6541,0.33,Florida,2013
+GA,4774,0.26,Georgia,2013
+GU,3,0.09,,2013
+HI,304,0.32,Hawaii,2013
+IA,1680,0.37,Iowa,2013
+ID,689,0.32,Idaho,2013
+IL,7792,0.34,Illinois,2013
+IN,3565,0.37,Indiana,2013
+KS,1198,0.37,Kansas,2013
+KY,1530,0.36,Kentucky,2013
+LA,978,0.29,Louisiana,2013
+MA,5764,0.34,Massachusetts,2013
+MD,3781,0.28,Maryland,2013
+ME,714,0.38,Maine,2013
+MI,5585,0.33,Michigan,2013
+MN,3886,0.34,Minnesota,2013
+MO,3072,0.34,Missouri,2013
+MS,710,0.24,Mississippi,2013
+MT,581,0.34,Montana,2013
+NC,5431,0.32,North Carolina,2013
+ND,429,0.36,North Dakota,2013
+NE,1381,0.39,Nebraska,2013
+NH,738,0.37,New Hampshire,2013
+NJ,3549,0.35,New Jersey,2013
+NM,547,0.28,New Mexico,2013
+NV,926,0.36,Nevada,2013
+NY,8789,0.33,New York,2013
+OH,7231,0.35,Ohio,2013
+OK,718,0.35,Oklahoma,2013
+OR,3395,0.31,Oregon,2013
+PA,7469,0.36,Pennsylvania,2013
+PR,6,0.3,,2013
+RI,701,0.34,Rhode Island,2013
+SC,1662,0.3,South Carolina,2013
+SD,367,0.36,South Dakota,2013
+TN,1909,0.32,Tennessee,2013
+TX,6287,0.31,Texas,2013
+UT,1978,0.35,Utah,2013
+VA,5085,0.33,Virginia,2013
+VI,11,0.29,,2013
+VT,808,0.34,Vermont,2013
+WA,5030,0.33,Washington,2013
+WI,5904,0.38,Wisconsin,2013
+WV,618,0.36,West Virginia,2013
+WY,186,0.33,Wyoming,2013

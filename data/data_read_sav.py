@@ -13,18 +13,31 @@ state_fips_dtype = {
 state_fips = pd.read_csv('mapping-implicit-bias/data/us-state-fips.csv', dtype=state_fips_dtype)
 
 
-def cleanChunk(chunk, group):
+def cleanChunk(chunk, group, year):
     # filter for country of residence, state, and overall IAT D score
     # PCT_error_3467 = % of error in combined-task blocks
     # pct_300 = % of latencies below 300 ms
-    df = chunk[["year", "countryres_num", "STATE", "CountyNo", "D_biep.White_Good_all", "PCT_error_3467", "pct_300"]]
+    
+    # countryres_num 2017 onwards, countryres 2002-2016
+    if year <= 2016:
+        df = chunk[["year", "countryres", "STATE", "CountyNo", "D_biep.White_Good_all", "PCT_error_3467", "pct_300"]]
+        # print(df.head(10))
+    else:
+        df = chunk[["year", "countryres_num", "STATE", "CountyNo", "D_biep.White_Good_all", "PCT_error_3467", "pct_300"]]
+    
+    if 2015 <= year <= 2016:
+            df['countryres'] = pd.to_numeric(df['countryres'], downcast='integer', errors='coerce')
+    
     # rename columns
     df.columns = ['year','country', 'stateAbb', 'countyNo','score','percentError','percentRT<300']
+    
     # print(df.head(10))
     
     # filter for inclusion/exclusion critera
     #include people in the US with state and county info
-    df = df[(df["country"] == 1.0) &
+
+    if year <= 2014:
+        df = df[(df["country"] == "US") &
             (df["stateAbb"] != "") &
             (df["countyNo"] != "") &
             (df["score"].notna()) &
@@ -32,6 +45,15 @@ def cleanChunk(chunk, group):
             (df["percentError"] <= 30) &
             # exclude reaction times <300 ms on >10% of trials
             (df["percentRT<300"] <= 10)]
+    else:
+        df = df[(df["country"] == 1.0) &
+                (df["stateAbb"] != "") &
+                (df["countyNo"] != "") &
+                (df["score"].notna()) &
+                # exclude errors on > 30% of trials
+                (df["percentError"] <= 30) &
+                # exclude reaction times <300 ms on >10% of trials
+                (df["percentRT<300"] <= 10)]
     
     if group == 'county':
         # add column with state name and number
@@ -40,13 +62,14 @@ def cleanChunk(chunk, group):
         df['fips'] = df['stateNo'] + df['countyNo'].astype(str).str.zfill(3)
         df.drop(['stateNo'], axis=1, inplace=True)
 
+    # print(df.head(10))
     # round score to 2 decimal places
     df['score'] = df['score'].round(2)
 
     # drop uneccessary columns from dataframe
     df.drop(['country', 'countyNo', 'percentError', 'percentRT<300'], axis=1, inplace=True)
     
-    # print(df.head(5))
+    # print(df.head(10))
     return df
 
 
@@ -61,7 +84,7 @@ def processChunks(file,group,year):
     reader = pyreadstat.read_file_in_chunks(pyreadstat.read_sav, file, chunksize= 10000)
     
     for df, meta in reader:
-        cleaned_chunk = cleanChunk(df, group)
+        cleaned_chunk = cleanChunk(df, group, year)
         # print(cleaned_chunk.head(10))  # print first 10 rows for testing)
         result.append(cleaned_chunk)  
     combined_df = pd.concat(result)
@@ -86,9 +109,9 @@ def processChunks(file,group,year):
     return grouped
 
 def main():
-    file = "/Users/jessicatong/Documents/IAT/Race_IAT.public.2016.sav"
-    year = 2016
-    group = 'state'
+    file = "/Users/jessicatong/Documents/IAT/Race IAT.public.2010.sav"
+    year = 2010
+    group = 'county'
     df = processChunks(file, group, year)
     df.to_csv('mapping-implicit-bias/data/' + str(year) + '_' + group + '.csv', index=False)
     print(df.to_string())

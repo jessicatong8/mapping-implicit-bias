@@ -1,0 +1,60 @@
+stateAbb,count,avgScore,stateName,year
+AA,2,0.12,,2010
+AE,64,0.3,,2010
+AK,353,0.38,Alaska,2010
+AL,2205,0.31,Alabama,2010
+AP,46,0.38,,2010
+AR,1317,0.29,Arkansas,2010
+AZ,3175,0.33,Arizona,2010
+CA,20743,0.33,California,2010
+CO,4307,0.31,Colorado,2010
+CT,3053,0.34,Connecticut,2010
+DC,1107,0.24,District of Columbia,2010
+DE,544,0.28,Delaware,2010
+FL,8482,0.34,Florida,2010
+GA,5637,0.22,Georgia,2010
+GU,3,0.43,,2010
+HI,455,0.3,Hawaii,2010
+IA,2978,0.37,Iowa,2010
+ID,1138,0.34,Idaho,2010
+IL,11616,0.34,Illinois,2010
+IN,4928,0.36,Indiana,2010
+KS,1863,0.35,Kansas,2010
+KY,2275,0.34,Kentucky,2010
+LA,1803,0.27,Louisiana,2010
+MA,6354,0.34,Massachusetts,2010
+MD,4896,0.28,Maryland,2010
+ME,892,0.33,Maine,2010
+MH,1,0.16,,2010
+MI,6927,0.32,Michigan,2010
+MN,5087,0.37,Minnesota,2010
+MO,4495,0.34,Missouri,2010
+MP,5,0.2,,2010
+MS,926,0.15,Mississippi,2010
+MT,790,0.33,Montana,2010
+NC,6848,0.28,North Carolina,2010
+ND,351,0.38,North Dakota,2010
+NE,2054,0.34,Nebraska,2010
+NH,1157,0.39,New Hampshire,2010
+NJ,4836,0.34,New Jersey,2010
+NM,600,0.24,New Mexico,2010
+NV,1115,0.33,Nevada,2010
+NY,10998,0.34,New York,2010
+OH,8921,0.34,Ohio,2010
+OK,1313,0.31,Oklahoma,2010
+OR,3773,0.32,Oregon,2010
+PA,9835,0.34,Pennsylvania,2010
+PR,6,-0.04,,2010
+RI,779,0.37,Rhode Island,2010
+SC,2362,0.28,South Carolina,2010
+SD,359,0.37,South Dakota,2010
+TN,2968,0.31,Tennessee,2010
+TX,11050,0.3,Texas,2010
+UT,2378,0.36,Utah,2010
+VA,5841,0.31,Virginia,2010
+VI,3,0.47,,2010
+VT,824,0.35,Vermont,2010
+WA,5567,0.32,Washington,2010
+WI,7249,0.36,Wisconsin,2010
+WV,966,0.37,West Virginia,2010
+WY,237,0.31,Wyoming,2010

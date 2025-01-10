@@ -1,0 +1,52 @@
+stateAbb,count,avgScore,stateName,year
+AA,2,0.65,,2015
+AK,268,0.29,Alaska,2015
+AL,1538,0.27,Alabama,2015
+AP,10,0.04,,2015
+AR,894,0.28,Arkansas,2015
+AZ,3309,0.29,Arizona,2015
+CA,31019,0.27,California,2015
+CO,5167,0.27,Colorado,2015
+DC,1680,0.22,District of Columbia,2015
+DE,843,0.3,Delaware,2015
+FL,9811,0.29,Florida,2015
+FM,1,0.56,,2015
+GA,5964,0.25,Georgia,2015
+GU,4,0.3,,2015
+HI,462,0.28,Hawaii,2015
+IA,2612,0.32,Iowa,2015
+ID,940,0.3,Idaho,2015
+IL,10720,0.29,Illinois,2015
+IN,4059,0.32,Indiana,2015
+KS,1838,0.28,Kansas,2015
+KY,2520,0.29,Kentucky,2015
+LA,1704,0.24,Louisiana,2015
+MA,4,-0.45,Massachusetts,2015
+MD,5708,0.25,Maryland,2015
+MH,1,0.33,,2015
+MI,6717,0.29,Michigan,2015
+MN,6040,0.32,Minnesota,2015
+MO,4918,0.31,Missouri,2015
+MP,1,0.32,,2015
+MS,859,0.23,Mississippi,2015
+MT,396,0.3,Montana,2015
+NC,7209,0.28,North Carolina,2015
+ND,412,0.28,North Dakota,2015
+NE,1435,0.31,Nebraska,2015
+NM,847,0.27,New Mexico,2015
+NV,1324,0.27,Nevada,2015
+NY,14389,0.28,New York,2015
+OH,9407,0.31,Ohio,2015
+OK,1586,0.28,Oklahoma,2015
+OR,4806,0.25,Oregon,2015
+PA,9810,0.31,Pennsylvania,2015
+SC,2058,0.3,South Carolina,2015
+SD,508,0.32,South Dakota,2015
+TN,2668,0.29,Tennessee,2015
+TX,12664,0.28,Texas,2015
+UT,2445,0.31,Utah,2015
+VA,6958,0.28,Virginia,2015
+WA,8890,0.26,Washington,2015
+WI,7039,0.33,Wisconsin,2015
+WV,575,0.32,West Virginia,2015
+WY,197,0.22,Wyoming,2015

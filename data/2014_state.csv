@@ -1,0 +1,59 @@
+stateAbb,count,avgScore,stateName,year
+AA,1,-0.03,,2014
+AE,41,0.16,,2014
+AK,322,0.3,Alaska,2014
+AL,1548,0.28,Alabama,2014
+AP,18,0.32,,2014
+AR,1025,0.3,Arkansas,2014
+AZ,2983,0.31,Arizona,2014
+CA,22974,0.28,California,2014
+CO,5847,0.29,Colorado,2014
+CT,2951,0.32,Connecticut,2014
+DC,2407,0.25,District of Columbia,2014
+DE,467,0.29,Delaware,2014
+FL,7958,0.32,Florida,2014
+GA,5979,0.26,Georgia,2014
+GU,8,0.36,,2014
+HI,441,0.28,Hawaii,2014
+IA,2075,0.32,Iowa,2014
+ID,946,0.33,Idaho,2014
+IL,10818,0.32,Illinois,2014
+IN,4473,0.34,Indiana,2014
+KS,1756,0.35,Kansas,2014
+KY,2128,0.33,Kentucky,2014
+LA,1448,0.32,Louisiana,2014
+MA,8862,0.32,Massachusetts,2014
+MD,5860,0.27,Maryland,2014
+ME,714,0.33,Maine,2014
+MI,7367,0.31,Michigan,2014
+MN,5656,0.33,Minnesota,2014
+MO,4862,0.32,Missouri,2014
+MP,1,0.91,,2014
+MS,1009,0.23,Mississippi,2014
+MT,457,0.32,Montana,2014
+NC,6987,0.31,North Carolina,2014
+ND,397,0.35,North Dakota,2014
+NE,1743,0.35,Nebraska,2014
+NH,869,0.32,New Hampshire,2014
+NJ,4847,0.32,New Jersey,2014
+NM,743,0.29,New Mexico,2014
+NV,1227,0.32,Nevada,2014
+NY,13445,0.3,New York,2014
+OH,8356,0.33,Ohio,2014
+OK,1189,0.32,Oklahoma,2014
+OR,4754,0.28,Oregon,2014
+PA,9993,0.32,Pennsylvania,2014
+PR,11,0.17,,2014
+RI,902,0.35,Rhode Island,2014
+SC,1784,0.27,South Carolina,2014
+SD,434,0.35,South Dakota,2014
+TN,2240,0.27,Tennessee,2014
+TX,10113,0.3,Texas,2014
+UT,2626,0.31,Utah,2014
+VA,6978,0.31,Virginia,2014
+VI,26,0.2,,2014
+VT,956,0.32,Vermont,2014
+WA,7238,0.3,Washington,2014
+WI,7209,0.35,Wisconsin,2014
+WV,699,0.35,West Virginia,2014
+WY,218,0.3,Wyoming,2014

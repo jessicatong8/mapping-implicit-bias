@@ -1,0 +1,61 @@
+stateAbb,count,avgScore,stateName,year
+AA,2,0.05,,2016
+AE,10,0.15,,2016
+AK,456,0.27,Alaska,2016
+AL,2723,0.28,Alabama,2016
+AP,29,0.09,,2016
+AR,1544,0.29,Arkansas,2016
+AS,1,0.66,,2016
+AZ,4605,0.29,Arizona,2016
+CA,44310,0.26,California,2016
+CO,9368,0.27,Colorado,2016
+CT,2072,0.36,Connecticut,2016
+DC,2970,0.2,District of Columbia,2016
+DE,1070,0.28,Delaware,2016
+FL,13693,0.3,Florida,2016
+GA,9285,0.25,Georgia,2016
+GU,10,0.5,,2016
+HI,691,0.25,Hawaii,2016
+IA,4432,0.34,Iowa,2016
+ID,1653,0.29,Idaho,2016
+IL,17315,0.3,Illinois,2016
+IN,6455,0.32,Indiana,2016
+KS,3451,0.31,Kansas,2016
+KY,5149,0.32,Kentucky,2016
+LA,2315,0.26,Louisiana,2016
+MA,5959,0.33,Massachusetts,2016
+MD,9279,0.24,Maryland,2016
+ME,518,0.34,Maine,2016
+MI,11022,0.31,Michigan,2016
+MN,10844,0.32,Minnesota,2016
+MO,6937,0.28,Missouri,2016
+MP,1,-0.23,,2016
+MS,1614,0.25,Mississippi,2016
+MT,699,0.27,Montana,2016
+NC,14335,0.29,North Carolina,2016
+ND,531,0.3,North Dakota,2016
+NE,2787,0.32,Nebraska,2016
+NH,631,0.36,New Hampshire,2016
+NJ,3314,0.36,New Jersey,2016
+NM,1475,0.27,New Mexico,2016
+NV,1820,0.27,Nevada,2016
+NY,22039,0.28,New York,2016
+OH,15851,0.31,Ohio,2016
+OK,2436,0.28,Oklahoma,2016
+OR,7368,0.26,Oregon,2016
+PA,14765,0.3,Pennsylvania,2016
+PR,16,0.38,,2016
+PW,2,0.68,,2016
+RI,559,0.35,Rhode Island,2016
+SC,3552,0.29,South Carolina,2016
+SD,799,0.33,South Dakota,2016
+TN,4832,0.28,Tennessee,2016
+TX,19224,0.28,Texas,2016
+UT,3621,0.3,Utah,2016
+VA,10649,0.29,Virginia,2016
+VI,5,-0.09,,2016
+VT,620,0.33,Vermont,2016
+WA,13814,0.26,Washington,2016
+WI,11952,0.34,Wisconsin,2016
+WV,900,0.32,West Virginia,2016
+WY,334,0.27,Wyoming,2016

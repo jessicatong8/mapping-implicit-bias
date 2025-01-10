@@ -1,0 +1,58 @@
+stateAbb,count,avgScore,stateName,year
+AA,4,0.42,,2012
+AE,44,0.27,,2012
+AK,217,0.37,Alaska,2012
+AL,1212,0.3,Alabama,2012
+AP,23,0.34,,2012
+AR,808,0.3,Arkansas,2012
+AZ,1749,0.34,Arizona,2012
+CA,13895,0.33,California,2012
+CO,3197,0.32,Colorado,2012
+CT,2111,0.38,Connecticut,2012
+DC,978,0.27,District of Columbia,2012
+DE,351,0.33,Delaware,2012
+FL,6197,0.34,Florida,2012
+GA,4285,0.28,Georgia,2012
+GU,1,0.99,,2012
+HI,299,0.28,Hawaii,2012
+IA,1700,0.36,Iowa,2012
+ID,496,0.35,Idaho,2012
+IL,7853,0.35,Illinois,2012
+IN,3160,0.37,Indiana,2012
+KS,1100,0.31,Kansas,2012
+KY,1665,0.34,Kentucky,2012
+LA,1021,0.28,Louisiana,2012
+MA,5057,0.35,Massachusetts,2012
+MD,3773,0.27,Maryland,2012
+ME,576,0.35,Maine,2012
+MI,4977,0.35,Michigan,2012
+MN,3873,0.35,Minnesota,2012
+MO,2533,0.35,Missouri,2012
+MS,535,0.21,Mississippi,2012
+MT,430,0.37,Montana,2012
+NC,5500,0.32,North Carolina,2012
+ND,294,0.39,North Dakota,2012
+NE,1553,0.4,Nebraska,2012
+NH,715,0.4,New Hampshire,2012
+NJ,3431,0.37,New Jersey,2012
+NM,504,0.35,New Mexico,2012
+NV,733,0.33,Nevada,2012
+NY,8522,0.33,New York,2012
+OH,6140,0.35,Ohio,2012
+OK,929,0.32,Oklahoma,2012
+OR,2657,0.32,Oregon,2012
+PA,6598,0.36,Pennsylvania,2012
+PR,4,0.41,,2012
+RI,694,0.37,Rhode Island,2012
+SC,1609,0.29,South Carolina,2012
+SD,266,0.35,South Dakota,2012
+TN,1921,0.32,Tennessee,2012
+TX,6783,0.33,Texas,2012
+UT,1913,0.34,Utah,2012
+VA,4524,0.34,Virginia,2012
+VI,1,-0.1,,2012
+VT,730,0.39,Vermont,2012
+WA,4831,0.33,Washington,2012
+WI,5397,0.38,Wisconsin,2012
+WV,930,0.41,West Virginia,2012
+WY,112,0.34,Wyoming,2012
