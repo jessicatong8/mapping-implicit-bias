@@ -4,7 +4,7 @@ import numpy as np
 import time
 start_time = time.time()
 
-file = "/Users/jessicatong/Documents/IAT/RaceIAT.public.2023.sav"
+file = "/Users/jessicatong/Documents/IAT/Race_IAT.public.2020.sav"
 
 state_fips_dtype = {
     'stateName': 'str',
@@ -89,8 +89,8 @@ def processChunks(file,group,year):
     return grouped
 
 def main():
-    df = processChunks(file,"state",2023)
-    df.to_csv('mapping-implicit-bias/data/2023_state.csv', index=False)
+    df = processChunks(file,"county",2020)
+    df.to_csv('mapping-implicit-bias/data/2020_county.csv', index=False)
     print(df.to_string())
     print("Process finished --- %s seconds ---" % (time.time() - start_time))
 
