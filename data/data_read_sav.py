@@ -17,7 +17,6 @@ def cleanChunk(chunk, group):
     # filter for country of residence, state, and overall IAT D score
     # PCT_error_3467 = % of error in combined-task blocks
     # pct_300 = % of latencies below 300 ms
-    # df = chunk.loc[:,["year","countryres_num", "STATE", "CountyNo", "D_biep.White_Good_all", "PCT_error_3467", "pct_300"]]
     df = chunk[["year", "countryres_num", "STATE", "CountyNo", "D_biep.White_Good_all", "PCT_error_3467", "pct_300"]]
     # rename columns
     df.columns = ['year','country', 'stateAbb', 'countyNo','score','percentError','percentRT<300']
@@ -87,9 +86,9 @@ def processChunks(file,group,year):
     return grouped
 
 def main():
-    file = "/Users/jessicatong/Documents/IAT/Race_IAT.public.2021.sav"
-    year = 2021
-    group = 'county'
+    file = "/Users/jessicatong/Documents/IAT/Race_IAT.public.2016.sav"
+    year = 2016
+    group = 'state'
     df = processChunks(file, group, year)
     df.to_csv('mapping-implicit-bias/data/' + str(year) + '_' + group + '.csv', index=False)
     print(df.to_string())

@@ -1,0 +1,58 @@
+stateAbb,count,avgScore,stateName,year
+AA,2,0.34,,2017
+AE,29,0.34,,2017
+AK,537,0.33,Alaska,2017
+AL,3270,0.29,Alabama,2017
+AP,23,0.22,,2017
+AR,2369,0.31,Arkansas,2017
+AZ,6008,0.29,Arizona,2017
+CA,50531,0.27,California,2017
+CO,10849,0.28,Colorado,2017
+CT,5667,0.32,Connecticut,2017
+DC,2954,0.21,District of Columbia,2017
+DE,1235,0.31,Delaware,2017
+FL,14727,0.32,Florida,2017
+GA,10497,0.25,Georgia,2017
+GU,12,0.33,,2017
+HI,805,0.31,Hawaii,2017
+IA,5756,0.36,Iowa,2017
+ID,1860,0.33,Idaho,2017
+IL,19374,0.31,Illinois,2017
+IN,8318,0.33,Indiana,2017
+KS,3354,0.34,Kansas,2017
+KY,5270,0.32,Kentucky,2017
+LA,2731,0.27,Louisiana,2017
+MA,16850,0.3,Massachusetts,2017
+MD,9644,0.26,Maryland,2017
+ME,1533,0.3,Maine,2017
+MI,13509,0.31,Michigan,2017
+MN,11925,0.33,Minnesota,2017
+MO,8583,0.32,Missouri,2017
+MS,1736,0.26,Mississippi,2017
+MT,968,0.31,Montana,2017
+NC,14514,0.29,North Carolina,2017
+ND,614,0.39,North Dakota,2017
+NE,3323,0.34,Nebraska,2017
+NH,1853,0.36,New Hampshire,2017
+NJ,10105,0.33,New Jersey,2017
+NM,1643,0.29,New Mexico,2017
+NV,2111,0.28,Nevada,2017
+NY,23879,0.29,New York,2017
+OH,18320,0.32,Ohio,2017
+OK,2496,0.29,Oklahoma,2017
+OR,7898,0.26,Oregon,2017
+PA,16968,0.32,Pennsylvania,2017
+PR,37,0.29,,2017
+RI,1676,0.33,Rhode Island,2017
+SC,3826,0.32,South Carolina,2017
+SD,916,0.37,South Dakota,2017
+TN,4848,0.31,Tennessee,2017
+TX,19577,0.29,Texas,2017
+UT,4207,0.33,Utah,2017
+VA,12151,0.3,Virginia,2017
+VI,14,0.3,,2017
+VT,2175,0.31,Vermont,2017
+WA,15181,0.27,Washington,2017
+WI,12955,0.35,Wisconsin,2017
+WV,1108,0.34,West Virginia,2017
+WY,315,0.32,Wyoming,2017

@@ -1,0 +1,60 @@
+stateAbb,count,avgScore,stateName,year
+AA,2,0.02,,2018
+AE,25,0.3,,2018
+AK,497,0.27,Alaska,2018
+AL,2883,0.28,Alabama,2018
+AP,22,0.41,,2018
+AR,2171,0.29,Arkansas,2018
+AS,3,0.38,,2018
+AZ,5414,0.28,Arizona,2018
+CA,51848,0.25,California,2018
+CO,10515,0.27,Colorado,2018
+CT,5384,0.32,Connecticut,2018
+DC,2743,0.19,District of Columbia,2018
+DE,1368,0.29,Delaware,2018
+FL,14549,0.29,Florida,2018
+GA,9905,0.23,Georgia,2018
+GU,10,0.25,,2018
+HI,856,0.26,Hawaii,2018
+IA,6052,0.33,Iowa,2018
+ID,2127,0.33,Idaho,2018
+IL,19740,0.3,Illinois,2018
+IN,9231,0.32,Indiana,2018
+KS,3210,0.32,Kansas,2018
+KY,4935,0.31,Kentucky,2018
+LA,2643,0.25,Louisiana,2018
+MA,14911,0.29,Massachusetts,2018
+MD,10405,0.25,Maryland,2018
+ME,1647,0.31,Maine,2018
+MI,13255,0.3,Michigan,2018
+MN,12036,0.31,Minnesota,2018
+MO,8528,0.3,Missouri,2018
+MP,1,0.04,,2018
+MS,1691,0.28,Mississippi,2018
+MT,912,0.32,Montana,2018
+NC,13611,0.28,North Carolina,2018
+ND,585,0.36,North Dakota,2018
+NE,3449,0.32,Nebraska,2018
+NH,1861,0.34,New Hampshire,2018
+NJ,9117,0.32,New Jersey,2018
+NM,1574,0.27,New Mexico,2018
+NV,1676,0.25,Nevada,2018
+NY,24407,0.27,New York,2018
+OH,16655,0.3,Ohio,2018
+OK,2765,0.3,Oklahoma,2018
+OR,8030,0.25,Oregon,2018
+PA,16934,0.31,Pennsylvania,2018
+PR,42,0.4,,2018
+RI,1726,0.3,Rhode Island,2018
+SC,3529,0.29,South Carolina,2018
+SD,912,0.34,South Dakota,2018
+TN,5088,0.28,Tennessee,2018
+TX,20221,0.27,Texas,2018
+UT,4416,0.3,Utah,2018
+VA,11110,0.27,Virginia,2018
+VI,11,0.18,,2018
+VT,1938,0.32,Vermont,2018
+WA,15937,0.26,Washington,2018
+WI,11910,0.34,Wisconsin,2018
+WV,1256,0.35,West Virginia,2018
+WY,410,0.32,Wyoming,2018
