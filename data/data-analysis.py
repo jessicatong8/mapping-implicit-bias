@@ -2,6 +2,8 @@ import pandas as pd
 import pyreadstat
 import numpy as np
 import time
+import os
+
 start_time = time.time()
 
 state_fips_dtype = {
@@ -108,14 +110,35 @@ def processChunks(file,group,year):
 
     return grouped
 
+def combineCSVs(directory):
+    states = []
+    counties = []
+    for filename in os.scandir(directory):
+        if 'state' in filename.path: 
+            df = pd.read_csv(filename.path)
+            states.append(df)
+        elif 'county' in filename.path:
+            df = pd.read_csv(filename.path)
+            counties.append(df)
+
+    combined_states = pd.concat(states)
+    combined_counties = pd.concat(counties)
+    combined_states = combined_states.sort_values(by='year')
+    combined_counties = combined_counties.sort_values(by='year')
+
+    combined_states.to_csv('mapping-implicit-bias/data/states.csv')
+    combined_counties.to_csv('mapping-implicit-bias/data/counties.csv')
+
 def main():
-    file = "/Users/jessicatong/Documents/IAT/Race IAT.public.2010.sav"
-    year = 2010
-    group = 'county'
-    df = processChunks(file, group, year)
-    df.to_csv('mapping-implicit-bias/data/' + str(year) + '_' + group + '.csv', index=False)
-    print(df.to_string())
-    print("Process finished --- %s seconds ---" % (time.time() - start_time))
+    # file = "/Users/jessicatong/Documents/IAT/Race IAT.public.2010.sav"
+    # year = 2010
+    # group = 'county'
+    # df = processChunks(file, group, year)
+    # df.to_csv('mapping-implicit-bias/data/' + str(year) + '_' + group + '.csv', index=False)
+    # print(df.to_string())
+    # print("Process finished --- %s seconds ---" % (time.time() - start_time))
+
+    combineCSVs('mapping-implicit-bias/data/annual-data')
 
 if __name__ == '__main__':
     main()
