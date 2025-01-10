@@ -1,0 +1,59 @@
+stateAbb,count,avgScore,stateName,year
+AA,3,0.29,,2022
+AE,36,0.16,,2022
+AK,597,0.25,Alaska,2022
+AL,3990,0.21,Alabama,2022
+AP,31,0.12,,2022
+AR,2767,0.25,Arkansas,2022
+AS,2,0.5,,2022
+AZ,5823,0.23,Arizona,2022
+CA,50211,0.21,California,2022
+CO,9511,0.22,Colorado,2022
+CT,30,0.12,Connecticut,2022
+DC,2125,0.18,District of Columbia,2022
+DE,1664,0.23,Delaware,2022
+FL,15591,0.25,Florida,2022
+GA,11005,0.19,Georgia,2022
+GU,20,0.3,,2022
+HI,839,0.19,Hawaii,2022
+IA,5601,0.29,Iowa,2022
+ID,1631,0.26,Idaho,2022
+IL,18793,0.25,Illinois,2022
+IN,8116,0.27,Indiana,2022
+KS,2730,0.25,Kansas,2022
+KY,6085,0.27,Kentucky,2022
+LA,3102,0.21,Louisiana,2022
+MA,75,0.22,Massachusetts,2022
+MD,9753,0.19,Maryland,2022
+ME,36,0.31,Maine,2022
+MI,15439,0.26,Michigan,2022
+MN,11583,0.27,Minnesota,2022
+MO,7452,0.25,Missouri,2022
+MS,1986,0.2,Mississippi,2022
+MT,901,0.23,Montana,2022
+NC,15413,0.23,North Carolina,2022
+ND,702,0.31,North Dakota,2022
+NE,2985,0.29,Nebraska,2022
+NH,19,0.22,New Hampshire,2022
+NJ,49,0.37,New Jersey,2022
+NM,1594,0.23,New Mexico,2022
+NV,2654,0.23,Nevada,2022
+NY,22620,0.24,New York,2022
+OH,17969,0.26,Ohio,2022
+OK,3590,0.24,Oklahoma,2022
+OR,8906,0.21,Oregon,2022
+PA,15861,0.26,Pennsylvania,2022
+PR,98,0.13,,2022
+RI,10,0.3,Rhode Island,2022
+SC,3985,0.22,South Carolina,2022
+SD,880,0.26,South Dakota,2022
+TN,5022,0.23,Tennessee,2022
+TX,19928,0.22,Texas,2022
+UT,4385,0.27,Utah,2022
+VA,9928,0.22,Virginia,2022
+VI,10,0.19,,2022
+VT,29,0.35,Vermont,2022
+WA,14971,0.22,Washington,2022
+WI,11896,0.3,Wisconsin,2022
+WV,1122,0.3,West Virginia,2022
+WY,448,0.27,Wyoming,2022

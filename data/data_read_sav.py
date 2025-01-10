@@ -87,9 +87,9 @@ def processChunks(file,group,year):
     return grouped
 
 def main():
-    file = "/Users/jessicatong/Documents/IAT/RaceIAT.public.2023.sav"
-    year = 2023
-    group = 'state'
+    file = "/Users/jessicatong/Documents/IAT/Race_IAT.public.2021.sav"
+    year = 2021
+    group = 'county'
     df = processChunks(file, group, year)
     df.to_csv('mapping-implicit-bias/data/' + str(year) + '_' + group + '.csv', index=False)
     print(df.to_string())
