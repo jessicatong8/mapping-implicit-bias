@@ -40,26 +40,35 @@ h2 {
 
 nav {
     background-color: white;
-    padding: 1em;
+    margin: 1em;
     text-align: right;
 }
 
-nav > a {
+.tabs {
     text-decoration: none;
     color: black;
     padding: 1em;
     
 }
 
-nav > a:hover {
+.tabs:hover {
     background-color: #004155;
     color: white;
+}
+
+.icons {
+    width: 1.5em;
+    margin-bottom: -0.4em;
+    /* height: 1.5em; */
+    margin-right:1em;
+    margin-left: 0.5em;
+    /* margin-top: 0.5em; */
+    /* padding-top: 0.5em; */
 }
 
 .header-title {
     background-color: #1c8595;
     color: white;
-    /* padding-bottom: 4em; */
     margin-bottom: 2em;
     padding: 2em 1em;
 }
@@ -109,4 +118,12 @@ iframe {
 .disabled {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+main a {
+    color:#056979
+}
+
+main a:visited {
+    color: #411e82
 }
