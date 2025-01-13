@@ -129,6 +129,14 @@ def combineCSVs(directory):
     combined_states.to_csv('mapping-implicit-bias/data/states.csv')
     combined_counties.to_csv('mapping-implicit-bias/data/counties.csv')
 
+def countSampleSize():
+    """
+    count the total number of particpants 
+    """
+    combined_states = pd.read_csv('mapping-implicit-bias/data/states.csv')
+    return (combined_states['count'].sum()) #4419157
+
+
 def main():
     # file = "/Users/jessicatong/Documents/IAT/Race IAT.public.2010.sav"
     # year = 2010
@@ -138,7 +146,10 @@ def main():
     # print(df.to_string())
     # print("Process finished --- %s seconds ---" % (time.time() - start_time))
 
-    combineCSVs('mapping-implicit-bias/data/annual-data')
+    # combineCSVs('mapping-implicit-bias/data/annual-data')
+
+    print(countSampleSize())
+
 
 if __name__ == '__main__':
     main()
