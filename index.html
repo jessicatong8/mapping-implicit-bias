@@ -16,20 +16,75 @@
             <a href = '#'>About</a>
             <a href = '#'>Learn More</a>
         </nav>
-        <h1 class="lato-bold">Mapping Implicit Bias</h1>
-        <p> Subheading </p>
+        <div class = "header-title"> 
+            <h1 class="lato-bold">Mapping Implicit Bias</h1>
+            <p> Implicit bias is an unconscious mental association between a certain quality and social category, such as race.
+                Mapped across a population, average implicit racial bias is a reflection of systemic racism. </p>
+        </div>
     </header>
 
     <main>
         <div class = "button-flexbox">
-            <button class="button disabled" id="stateButton">State Map</button>
-            <button class="button" id="countyButton">County Map</button>
+            <button class="button disabled lato-regular" id="stateButton">State Map</button>
+            <button class="button lato-regular" id="countyButton">County Map</button>
         </div>
 
         <iframe id="stateMap" class="" src= map_states.html title="Map of US States"></iframe>
         <iframe id="countyMap" class="hidden"src= map_counties.html title="Map of US Counties"></iframe>
 
-        <p> caption blah blah</p>
+        <p> Implicit racial bias is measured by the Race Implicit Association Test (IAT). 
+            Individually, higher implicit bias scores indicate a stronger association between white and good compared to black and good. 
+            Averaged across populations, higher scores reflect greater systemic racism. 
+        </p>
+
+        <h2> What is Implicit Bias? </h2>
+
+        <p>
+            Implicit bias refers to automatic mental associations that can shape our perceptions and decisions without our conscious awareness. 
+            Implicit biases are learned through our experiences with inequalities and stereotypes in our environments.
+        </p>
+
+        <h2> How is Implicit Bias Measured? </h2>
+
+        <p>
+            The Implicit Association Test (IAT) is the best known and most widely used tool for measuring implicit bias. 
+            Data for this visualization is derived from the Race IAT, where over x number of pariticipants have completed the task of quickly categorizing white and black faces as well as positive and negative words. 
+            Since categorizing easier when concepts are closely related, response times are a measure of the strength of associations between concepts. 
+            Higher Race IAT scores indicate a stronger association between white and good compared to black and good. 
+            You can take the test yourself through the <a href = https://implicit.harvard.edu/implicit/takeatest.html>Project Implicit research website</a>.
+        </p>
+
+        <h2>Implicit Bias as a Reflection of Systemic Racism</h2>
+
+        <p>
+            Implicit bias is measured on the individual level and is often treated in research as an individual attitude.
+             But, a person's implicit bias is not strongly associated with their behavior, nor is it stable over time. 
+        </p>
+
+        <p>
+            However, implicit bias becomes a stable, predictive measure when averaged across populations.
+            Regions in the U.S. with higher levels of implicit race bias also have greater racial disparities in police shootings. 
+            County-level implicit bias is associated with health disparities, and state-level implicit bias is associated with the frequency of internet searches for racial slurs. 
+            Implicit biases are shaped by experiences with inequalities and stereotypes in the environment, and places with greater systemic inequalities increase the accessibility of stereotypes that form implicit biases. 
+            Average implicit bias in a given location is a predictor of discrimination in that environment, and can be considered a cognitive reflection of systemic racism. 
+        </p>
+
+        <h2>Why does Mapping Implicit Bias Matter?</h2>
+
+        <p>
+            Mapping aggregated implicit bias scores visualizes systemic racism, driving impactful, actionable questions:
+        </p>
+
+        <ul>
+            <li> What are the root causes of implicit biases? What historical, political, and cultural contexts make an environment more biased?</li>
+            <li> What features of our environments make stereotypes more accessible?</li>
+            <li> How can our spaces, communities, and institutions be designed to reduce implicit biases? </li>
+        </ul>
+
+        <p>
+            Quantifying and visualizing implicit bias empowers policymakers and community members with data-driven psychological insights into the structural inequalities in our environments. 
+        </p>
+
     </main>
 
 </body>

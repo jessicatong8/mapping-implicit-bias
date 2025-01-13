@@ -1,16 +1,62 @@
 body {
-    font-size: 16px;
+    font-size: 18px;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
     margin: 0;
+    line-height: 1.4;
     /* padding: 0em 2em 0.5em; */
+}
+
+main {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+@media only screen and (min-width: 1000px) {
+    main {
+        padding-left: 15em;
+        padding-right: 15em;
+    }
+    .header-title {
+        padding: 2.5em 15em;
+    }
+    /* nav {
+        margin-left: -15em;
+        margin-right: -15em;
+    } */
+}
+
+/* Colors */
+
+/* Fonts */
+
+h1 {
+    font-family: "Lato", serif;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 2.5em;
+    /* margin-top: 2em; */
+}
+
+h2 {
+    font-family: "Lato", serif;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 1.5em;
+    color:#056979
+}
+
+.lato-regular {
+    font-family: "Lato", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 nav {
     background-color: white;
-    padding: 15px;
-    margin: -15px;
+    padding: 1em;
+    /* margin: -2em; */
     text-align: right;
 }
 
@@ -26,50 +72,21 @@ nav > a:hover {
     color: white;
 }
 
-header {
+/* header {
     background-color: #1c8595;
     color: white;
-    padding: 15px;
-    margin-bottom: 1.5em;
-}
-  
-h1 {
-    font-family: "Lato", serif;
-    font-weight: 700;
-    font-style: bold;
-    font-size: 2.5em;
-    margin-top: 1em;
+    padding-bottom: 4em;
+    margin-bottom: 2em;
+} */
+
+.header-title {
+    background-color: #1c8595;
+    color: white;
+    /* padding-bottom: 4em; */
+    margin-bottom: 2em;
+    padding: 2em 1em;
 }
 
-main {
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-@media only screen and (min-width: 1000px) {
-    main {
-        padding-left: 15em;
-        padding-right: 15em;
-    }
-    header {
-        padding-left: 15em;
-        padding-right: 15em;
-    }
-    nav {
-        margin-left: -15em;
-        margin-right: -15em;
-    }
-}
-
-iframe {
-    border: none;
-    width: 100%;
-    height: 62vh;
-}
-
-.hidden {
-    display: none;
-}
 
 .button-flexbox {
     display: flex;
@@ -93,10 +110,14 @@ iframe {
     background-color: #004155; /* Green */
 }
 
-.lato-regular {
-    font-family: "Lato", serif;
-    font-weight: 400;
-    font-style: normal;
+iframe {
+    border: none;
+    width: 100%;
+    height: 62vh;
+}
+
+.hidden {
+    display: none;
 }
 
 .disabled {
