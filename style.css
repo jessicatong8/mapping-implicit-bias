@@ -5,7 +5,6 @@ body {
     font-style: normal;
     margin: 0;
     line-height: 1.4;
-    /* padding: 0em 2em 0.5em; */
 }
 
 main {
@@ -13,19 +12,6 @@ main {
     padding-right: 1em;
 }
 
-@media only screen and (min-width: 1000px) {
-    main {
-        padding-left: 15em;
-        padding-right: 15em;
-    }
-    .header-title {
-        padding: 2.5em 15em;
-    }
-    /* nav {
-        margin-left: -15em;
-        margin-right: -15em;
-    } */
-}
 
 /* Colors */
 
@@ -36,7 +22,6 @@ h1 {
     font-weight: 700;
     font-style: bold;
     font-size: 2.5em;
-    /* margin-top: 2em; */
 }
 
 h2 {
@@ -56,7 +41,6 @@ h2 {
 nav {
     background-color: white;
     padding: 1em;
-    /* margin: -2em; */
     text-align: right;
 }
 
@@ -72,13 +56,6 @@ nav > a:hover {
     color: white;
 }
 
-/* header {
-    background-color: #1c8595;
-    color: white;
-    padding-bottom: 4em;
-    margin-bottom: 2em;
-} */
-
 .header-title {
     background-color: #1c8595;
     color: white;
@@ -87,6 +64,15 @@ nav > a:hover {
     padding: 2em 1em;
 }
 
+@media only screen and (min-width: 1000px) {
+    main {
+        padding-left: 15em;
+        padding-right: 15em;
+    }
+    .header-title {
+        padding: 2.5em 15em;
+    }
+}
 
 .button-flexbox {
     display: flex;
@@ -107,7 +93,7 @@ nav > a:hover {
 }
 
 .button:hover {
-    background-color: #004155; /* Green */
+    background-color: #004155;
 }
 
 iframe {
