@@ -4,9 +4,9 @@ from jinja2 import Template
 import json
  
 #import data
-data = pd.read_csv('data/2020_RaceAverageScore_Cleaned.csv')
+data = pd.read_csv('/Users/jessicatong/Documents/IAT/mapping-implicit-bias/data/old-csv-data/2020_state_fromcsv.csv')
 
-with open('geojson/us-states.json') as response:
+with open('/Users/jessicatong/Documents/IAT/mapping-implicit-bias/geojson/us-states.json') as response:
      states = json.load(response)
 
 
@@ -14,6 +14,7 @@ fig = px.choropleth(data, geojson=states, locations='State', color='Average Scor
                     range_color=(0.2,0.3),
                     color_continuous_scale="Darkmint",
                     scope="usa",
+                    labels={'Average Score':'Average Score'}
                     )
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 fig.update_geos(showlakes=False)
@@ -24,8 +25,8 @@ fig.update_geos(showlakes=False)
 fig.show()
 
 
-outputFile = r"mapping-implicit-bias/website/map_states.html"
-templateFile = r"template.html"
+outputFile = r"/Users/jessicatong/Documents/IAT/mapping-implicit-bias/map_states.html"
+templateFile = r"/Users/jessicatong/Documents/IAT/mapping-implicit-bias/mapping/template.html"
 
 plotly_jinja_data = {"fig":fig.to_html(full_html=False)}
 
