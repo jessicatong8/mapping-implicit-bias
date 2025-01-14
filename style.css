@@ -115,6 +115,14 @@ iframe {
     height: 62vh;
 }
 
+#mapContainer {
+    /* border: 1px solid black; */
+    /* width: ; */
+    height: 80vh;
+    /* padding: -2em; */
+    margin: -1em;
+}
+
 .hidden {
     display: none;
 }

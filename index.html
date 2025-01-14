@@ -6,6 +6,8 @@
     <title>Mapping Implicit Bias</title>
     <link href="style.css" rel="stylesheet">
     <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -30,8 +32,13 @@
             <button class="button lato-regular" id="countyButton">County Map</button>
         </div>
 
-        <iframe id="stateMap" class="" src= map_states.html title="Map of US States"></iframe>
-        <iframe id="countyMap" class="hidden"src= map_counties.html title="Map of US Counties"></iframe>
+        <!-- <iframe id="stateMap" class="" src= map_states.html title="Map of US States"></iframe>
+        <iframe id="countyMap" class="hidden"src= map_counties.html title="Map of US Counties"></iframe> -->
+
+        <div id="mapContainer">
+            <!-- <div id="stateMap" class="map hidden"></div>
+            <div id="countyMap" class="map hidden"></div> -->
+        </div>
 
         <p> Implicit racial bias is measured by the Race Implicit Association Test (IAT). 
             Individually, higher implicit bias scores indicate a stronger association between white and good compared to black and good. 
