@@ -118,14 +118,16 @@ def combineCSVs(directory):
             df = pd.read_csv(filename.path)
             states.append(df)
         elif 'county' in filename.path:
-            df = pd.read_csv(filename.path)
+            df = pd.read_csv(filename.path, dtype={'fips': str})
+            # print(df)
             counties.append(df)
 
     combined_states = pd.concat(states)
     combined_counties = pd.concat(counties)
+    
     combined_states = combined_states.sort_values(by='year')
     combined_counties = combined_counties.sort_values(by='year')
-
+    
     combined_states.to_csv('mapping-implicit-bias/data/states.csv')
     combined_counties.to_csv('mapping-implicit-bias/data/counties.csv')
 
@@ -136,6 +138,47 @@ def countSampleSize():
     combined_states = pd.read_csv('mapping-implicit-bias/data/states.csv')
     return (combined_states['count'].sum()) #4419157
 
+def averageYearsState():
+    df = pd.read_csv('mapping-implicit-bias/data/states.csv')
+    df = df[(df["year"] >= 2018) &
+            (df["year"] <= 2023)]
+    
+    print(df)
+    df['sum'] = df['count'] * df['avgScore']
+    grouped = df.groupby('stateAbb').agg({
+        'sum': 'sum',
+        'count': 'sum'
+    }).reset_index()
+
+    grouped['avgScore'] = (grouped['sum'] / grouped['count']).round(2)
+    grouped['stateName'] = grouped['stateAbb'].map(state_fips.set_index('stateAbb')['stateName'])
+    
+    grouped.drop(['sum'], axis=1, inplace=True)
+    # grouped.drop(['count'], axis=1, inplace=True)
+
+    grouped.to_csv('mapping-implicit-bias/data/states-last5years.csv', index=False)
+    return grouped
+
+def averageYearsCounty():
+    df = pd.read_csv('mapping-implicit-bias/data/counties.csv', dtype= {'fips': str})
+    df = df[(df["year"] >= 2018) &
+            (df["year"] <= 2023)]
+    
+    print(df)
+    df['sum'] = df['count'] * df['avgScore']
+    
+    grouped = df.groupby('fips').agg({
+        'sum': 'sum',
+        'count': 'sum'
+    }).reset_index()
+
+    grouped['avgScore'] = (grouped['sum'] / grouped['count']).round(2)
+    
+    grouped.drop(['sum'], axis=1, inplace=True)
+    # grouped.drop(['count'], axis=1, inplace=True)
+
+    grouped.to_csv('mapping-implicit-bias/data/counties-last5years.csv', index=False)
+    return grouped
 
 def main():
     # file = "/Users/jessicatong/Documents/IAT/Race IAT.public.2010.sav"
@@ -148,7 +191,10 @@ def main():
 
     # combineCSVs('mapping-implicit-bias/data/annual-data')
 
-    print(countSampleSize())
+    # print(countSampleSize())
+
+    # print(averageYearsState())
+    print(averageYearsCounty())
 
 
 if __name__ == '__main__':

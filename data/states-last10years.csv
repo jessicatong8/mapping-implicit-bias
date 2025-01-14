@@ -1,0 +1,63 @@
+,stateAbb,count,avgScore,stateName
+0,AA,26,0.1,
+1,AE,648,0.21,
+2,AK,5471,0.27,Alaska
+3,AL,33140,0.26,Alabama
+4,AP,438,0.2,
+5,AR,23073,0.27,Arkansas
+6,AS,9,0.27,
+7,AZ,56934,0.26,Arizona
+8,CA,514139,0.24,California
+9,CO,102494,0.25,Colorado
+10,CT,44607,0.3,Connecticut
+11,DC,28265,0.2,District of Columbia
+12,DE,14464,0.27,Delaware
+13,FL,150182,0.28,Florida
+14,FM,1,0.56,
+15,GA,107465,0.23,Georgia
+16,GU,140,0.3,
+17,HI,8053,0.24,Hawaii
+18,IA,51656,0.31,Iowa
+19,ID,18043,0.29,Idaho
+20,IL,186899,0.28,Illinois
+21,IN,84663,0.3,Indiana
+22,KS,32464,0.3,Kansas
+23,KY,50200,0.29,Kentucky
+24,LA,27527,0.24,Louisiana
+25,MA,122848,0.28,Massachusetts
+26,MD,102987,0.23,Maryland
+27,ME,13415,0.29,Maine
+28,MH,2,0.46,
+29,MI,129575,0.29,Michigan
+30,MN,112058,0.3,Minnesota
+31,MO,78484,0.29,Missouri
+32,MP,11,0.23,
+33,MS,17123,0.23,Mississippi
+34,MT,8848,0.27,Montana
+35,NC,135208,0.26,North Carolina
+36,ND,6740,0.33,North Dakota
+37,NE,29844,0.31,Nebraska
+38,NH,14493,0.32,New Hampshire
+39,NJ,76555,0.3,New Jersey
+40,NM,16175,0.25,New Mexico
+41,NV,21011,0.25,Nevada
+42,NY,243981,0.27,New York
+43,OH,169834,0.29,Ohio
+44,OK,28173,0.27,Oklahoma
+45,OR,79948,0.24,Oregon
+46,PA,169766,0.29,Pennsylvania
+47,PR,828,0.23,
+48,PW,3,0.56,
+49,RI,14545,0.29,Rhode Island
+50,SC,37696,0.26,South Carolina
+51,SD,9050,0.33,South Dakota
+52,TN,49776,0.27,Tennessee
+53,TX,201399,0.25,Texas
+54,UT,45357,0.29,Utah
+55,VA,114973,0.27,Virginia
+56,VI,185,0.16,
+57,VT,14924,0.29,Vermont
+58,WA,152157,0.25,Washington
+59,WI,120527,0.32,Wisconsin
+60,WV,11562,0.31,West Virginia
+61,WY,3882,0.27,Wyoming

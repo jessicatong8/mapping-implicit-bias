@@ -4,17 +4,17 @@ from jinja2 import Template
 import json
  
 #import data
-data = pd.read_csv('/Users/jessicatong/Documents/IAT/mapping-implicit-bias/data/old-csv-data/2020_state_fromcsv.csv')
+data = pd.read_csv('/Users/jessicatong/Documents/IAT/mapping-implicit-bias/data/states-last5years.csv')
 
 with open('/Users/jessicatong/Documents/IAT/mapping-implicit-bias/geojson/us-states.json') as response:
      states = json.load(response)
 
 
-fig = px.choropleth(data, geojson=states, locations='State', color='Average Score',
+fig = px.choropleth(data, geojson=states, locations='stateAbb', color='avgScore',
                     range_color=(0.2,0.3),
                     color_continuous_scale="Darkmint",
                     scope="usa",
-                    labels={'Average Score':'Average Score'}
+                    labels={'avgScore':'Average Score', 'stateAbb': 'State'}
                     )
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 fig.update_geos(showlakes=False)

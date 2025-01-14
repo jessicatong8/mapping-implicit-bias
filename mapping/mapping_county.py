@@ -4,8 +4,8 @@ from jinja2 import Template
 import json
  
 #import data
-data = pd.read_csv('/Users/jessicatong/Documents/IAT/mapping-implicit-bias/data/old-csv-data/2020_county_fromcsv.csv', dtype={"fips": str})
-data = data.loc[data['count'] >= 20] 
+data = pd.read_csv('/Users/jessicatong/Documents/IAT/mapping-implicit-bias/data/counties-last5years.csv', dtype={"fips": str})
+data = data.loc[data['count'] >= 30] 
 
 
 with open('/Users/jessicatong/Documents/IAT/mapping-implicit-bias/geojson/us-counties.json') as response:
