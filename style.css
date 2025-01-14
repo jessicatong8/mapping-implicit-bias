@@ -115,12 +115,19 @@ iframe {
     height: 62vh;
 }
 
-#mapContainer {
+#stateMap {
     /* border: 1px solid black; */
     /* width: ; */
     height: 80vh;
     /* padding: -2em; */
-    margin: -1em;
+    margin-top: -0.8em;
+    margin-bottom: -1em;
+}
+
+#countyMap {
+    height: 80vh;
+    margin-top: -0.8em;
+    margin-bottom: -1em;
 }
 
 .hidden {
